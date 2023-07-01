@@ -51,7 +51,7 @@ const Customizer = () => {
 
     try {
       setGeneratingImg(true);
-      const response = await fetch('http://localhost:8080/api/v1/dalle', {
+      const response = await fetch('https://project-three-ai-llet.onrender.com/api/v1/dalle', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
@@ -61,7 +61,7 @@ const Customizer = () => {
         })
       })
       const data = await response.json();
-      handleDecals(type, `data:image/pgn;base64,${data.phote}`)
+      handleDecals(type, `data:image/pgn;base64,${data.photo}`)
     } catch (error) {
       alert(error)
     } finally {
